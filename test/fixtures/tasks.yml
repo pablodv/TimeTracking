@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: 
+  duration: 9.99
+  description: MyText
+
+two:
+  project: 
+  duration: 9.99
+  description: MyText
