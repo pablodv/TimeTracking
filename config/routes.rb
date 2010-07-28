@@ -1,3 +1,3 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :projects
+  map.resources :projects, :has_many => :tasks
 end

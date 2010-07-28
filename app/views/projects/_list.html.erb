@@ -1,19 +1,8 @@
 <%= list_builder_for @records do |list|
-
-
       list.name
-
-
-
       list.description
-
-
-
       list.budget
-
-
-
-
-
-
+      list.html :caption => 'Task' do |p|
+        link_to 'Manage Task', project_tasks_path(p) 
+      end
     end %>

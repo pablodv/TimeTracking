@@ -73,3 +73,254 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 18:57:56) [GET]
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (9.0ms)
+Rendered projects/_list (3.0ms)
+Rendered commons/_session (2.0ms)
+Completed in 139ms (View: 77, DB: 1) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:57:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 18:57:57) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.0ms)
+Rendered projects/_list (2.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 51ms (View: 34, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:57:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-07-28 18:58:02) [GET]
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered projects/_form (6.0ms)
+Rendered commons/_session (1.0ms)
+Completed in 143ms (View: 132, DB: 0) | 200 OK [http://localhost/projects/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-07-28 18:58:14) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"XRphfMJ0bDXcG7Tdqw2ULdFuA56QLMghKO0S4hWO9cs=", "project"=>{"name"=>"Proyecto", "description"=>"descripcion", "budget"=>"1"}}
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Proyecto') LIMIT 1[0m
+  [4;35;1mProject Create (1.0ms)[0m   [0mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "budget") VALUES('Proyecto', '2010-07-28 21:58:14', '2010-07-28 21:58:14', 'descripcion', 1)[0m
+Redirected to http://localhost:3000/projects
+Completed in 149ms (DB: 2) | 302 Found [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 18:58:14) [GET]
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.0ms)
+
+ActionView::TemplateError (undefined method `project_tasks_path' for #<ActionView::Base:0x70b80b8>) on line #6 of app/views/projects/_list.html.erb:
+3:       list.description
+4:       list.budget
+5:       list.html :caption => 'Task' do |p|
+6:         link_to 'Manage Task', project_tasks_path(p) 
+7:       end
+8:     end %>
+
+    app/views/projects/_list.html.erb:6
+    app/views/projects/_list.html.erb:1
+    app/views/commons/index.html.erb:3
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (85.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 18:59:05) [GET]
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (9.0ms)
+Rendered projects/_list (12.0ms)
+Rendered commons/_session (2.0ms)
+Completed in 143ms (View: 85, DB: 1) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:59:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:59:10) [GET]
+  Parameters: {"project_id"=>"1"}
+
+NoMethodError (undefined method `administrated_me' for TasksController:Class):
+  app/controllers/tasks_controller.rb:2
+
+Rendered rescues/_trace (128.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-07-28 18:59:39) [GET]
+  Parameters: {"project_id"=>"1"}
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" WHERE (("tasks"."project_id" = 1)) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.0ms)
+Rendered tasks/_list (3.0ms)
+Rendered commons/_session (1.0ms)
+Completed in 74ms (View: 40, DB: 1) | 200 OK [http://localhost/projects/1/tasks]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:59:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-07-28 18:59:49) [GET]
+  Parameters: {"project_id"=>"1"}
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered tasks/_form (4.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 73ms (View: 55, DB: 1) | 200 OK [http://localhost/projects/1/tasks/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:59:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-07-28 18:59:59) [POST]
+  Parameters: {"commit"=>"Save", "project_id"=>"1", "authenticity_token"=>"XRphfMJ0bDXcG7Tdqw2ULdFuA56QLMghKO0S4hWO9cs=", "task"=>{"duration"=>"0.5", "description"=>"description"}}
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mTask Create (2.0ms)[0m   [0mINSERT INTO "tasks" ("duration", "created_at", "project_id", "updated_at", "description") VALUES(0.5, '2010-07-28 21:59:59', 1, '2010-07-28 21:59:59', 'description')[0m
+Redirected to http://localhost:3000/projects/1/tasks
+Completed in 174ms (DB: 3) | 302 Found [http://localhost/projects/1/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-07-28 18:59:59) [GET]
+  Parameters: {"project_id"=>"1"}
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM "tasks" WHERE (("tasks"."project_id" = 1)) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (13.0ms)
+Rendered tasks/_list (9.0ms)
+Rendered commons/_session (1.0ms)
+Completed in 61ms (View: 39, DB: 1) | 200 OK [http://localhost/projects/1/tasks]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 18:59:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-07-28 19:00:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering projects/show
+Rendered commons/_session (0.0ms)
+Completed in 64ms (View: 50, DB: 0) | 200 OK [http://localhost/projects/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 19:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 19:00:06) [GET]
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.0ms)
+Rendered projects/_list (9.0ms)
+Rendered commons/_session (1.0ms)
+Completed in 51ms (View: 37, DB: 1) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 19:00:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-07-28 19:00:08) [GET]
+  Parameters: {"project_id"=>"1"}
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" WHERE (("tasks"."project_id" = 1)) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (15.0ms)
+Rendered tasks/_list (9.0ms)
+Rendered commons/_session (1.0ms)
+Completed in 62ms (View: 41, DB: 1) | 200 OK [http://localhost/projects/1/tasks]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 19:00:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-07-28 19:00:17) [GET]
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (14.0ms)
+Rendered projects/_list (8.0ms)
+Rendered commons/_session (0.0ms)
+Completed in 132ms (View: 119, DB: 1) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-28 19:00:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
